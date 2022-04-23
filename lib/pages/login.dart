@@ -79,39 +79,40 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // height: double.infinity,
-      color: Colors.red,
-      child: ListView(
-        children: [
-          Image.asset("assets/images/login_image.png", fit: BoxFit.cover),
-          Form(
-            key: _formKey,
-            child: Column(
-              children: [
-                // const SizedBox(
-                //   height: 50.0,
-                // ),
-                // Image.asset("assets/images/login_image.png", fit: BoxFit.cover),
-                const SizedBox(
-                  height: 20.0,
-                ),
-                Text(
-                  "Welcome",
-                  style: GoogleFonts.pacifico(
-                      textStyle: TextStyle(
-                          color: Colors.yellow.shade700,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 42,
-                          letterSpacing: 2)),
-                ),
-                const SizedBox(
-                  height: 20.0,
-                ),
-                Padding(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        // color: Colors.red,
+        child: ListView(
+          children: [
+            Image.asset("assets/images/login_image.png", fit: BoxFit.cover),
+            const SizedBox(
+              height: 20,
+            ),
+            Center(
+              child: Text(
+                "Welcome",
+                style: GoogleFonts.pacifico(
+                    textStyle: TextStyle(
+                        color: Colors.yellow.shade700,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 42,
+                        letterSpacing: 2)),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Form(
+                key: _formKey,
+                child: Padding(
                   padding: const EdgeInsets.symmetric(
                       vertical: 16.0, horizontal: 32.0),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       TextFormField(
                         controller: emailController,
@@ -222,152 +223,150 @@ class _LoginState extends State<Login> {
                       // )
                     ],
                   ),
-                )
-              ],
-            ),
-          ),
-        ],
-        // child: Form(
-        //   key: _formKey,
-        //   child: Column(
-        //     children: [
-        //       // const SizedBox(
-        //       //   height: 50.0,
-        //       // ),
-        //       // Image.asset("assets/images/login_image.png", fit: BoxFit.cover),
-        //       const SizedBox(
-        //         height: 20.0,
-        //       ),
-        //       Text(
-        //         "Welcome",
-        //         style: GoogleFonts.pacifico(
-        //             textStyle: TextStyle(
-        //                 color: Colors.yellow.shade700,
-        //                 fontWeight: FontWeight.bold,
-        //                 fontSize: 42,
-        //                 letterSpacing: 2)),
-        //       ),
-        //       const SizedBox(
-        //         height: 20.0,
-        //       ),
-        //       Padding(
-        //         padding: const EdgeInsets.symmetric(
-        //             vertical: 16.0, horizontal: 32.0),
-        //         child: Column(
-        //           children: [
-        //             TextFormField(
-        //               controller: emailController,
-        //               decoration: const InputDecoration(
-        //                 prefixIcon: Icon(
-        //                   Icons.email_outlined,
-        //                   color: Colors.grey,
-        //                 ),
-        //                 hintText: "Enter Email",
-        //                 labelText: "Email",
-        //                 labelStyle: TextStyle(),
-        //                 border: OutlineInputBorder(),
-        //               ),
-        //               validator: (value) {
-        //                 if (value != null && value.isEmpty) {
-        //                   return "Email cannot be empty";
-        //                 }
-        //                 return null;
-        //               },
-        //               onChanged: (value) {
-        //                 name = value;
-        //                 setState(() {});
-        //               },
-        //             ),
-        //             const SizedBox(
-        //               height: 30.0,
-        //             ),
-        //             TextFormField(
-        //               controller: passwordController,
-        //               obscureText: true,
-        //               decoration: const InputDecoration(
-        //                 prefixIcon: Icon(
-        //                   Icons.password_outlined,
-        //                   color: Colors.grey,
-        //                 ),
-        //                 hintText: "Enter Password",
-        //                 labelText: "Password",
-        //                 border: OutlineInputBorder(),
-        //               ),
-        //               validator: (value) {
-        //                 if (value != null && value.isEmpty) {
-        //                   return "Username cannot be empty";
-        //                 } else if (value != null && value.length < 6) {
-        //                   return "Password length should be atleast 6";
-        //                 }
-        //                 return null;
-        //               },
-        //             ),
-        //             const SizedBox(
-        //               height: 40.0,
-        //             ),
+                )),
+          ],
+          // child: Form(
+          //   key: _formKey,
+          //   child: Column(
+          //     children: [
+          //       // const SizedBox(
+          //       //   height: 50.0,
+          //       // ),
+          //       // Image.asset("assets/images/login_image.png", fit: BoxFit.cover),
+          //       const SizedBox(
+          //         height: 20.0,
+          //       ),
+          //       Text(
+          //         "Welcome",
+          //         style: GoogleFonts.pacifico(
+          //             textStyle: TextStyle(
+          //                 color: Colors.yellow.shade700,
+          //                 fontWeight: FontWeight.bold,
+          //                 fontSize: 42,
+          //                 letterSpacing: 2)),
+          //       ),
+          //       const SizedBox(
+          //         height: 20.0,
+          //       ),
+          //       Padding(
+          //         padding: const EdgeInsets.symmetric(
+          //             vertical: 16.0, horizontal: 32.0),
+          //         child: Column(
+          //           children: [
+          //             TextFormField(
+          //               controller: emailController,
+          //               decoration: const InputDecoration(
+          //                 prefixIcon: Icon(
+          //                   Icons.email_outlined,
+          //                   color: Colors.grey,
+          //                 ),
+          //                 hintText: "Enter Email",
+          //                 labelText: "Email",
+          //                 labelStyle: TextStyle(),
+          //                 border: OutlineInputBorder(),
+          //               ),
+          //               validator: (value) {
+          //                 if (value != null && value.isEmpty) {
+          //                   return "Email cannot be empty";
+          //                 }
+          //                 return null;
+          //               },
+          //               onChanged: (value) {
+          //                 name = value;
+          //                 setState(() {});
+          //               },
+          //             ),
+          //             const SizedBox(
+          //               height: 30.0,
+          //             ),
+          //             TextFormField(
+          //               controller: passwordController,
+          //               obscureText: true,
+          //               decoration: const InputDecoration(
+          //                 prefixIcon: Icon(
+          //                   Icons.password_outlined,
+          //                   color: Colors.grey,
+          //                 ),
+          //                 hintText: "Enter Password",
+          //                 labelText: "Password",
+          //                 border: OutlineInputBorder(),
+          //               ),
+          //               validator: (value) {
+          //                 if (value != null && value.isEmpty) {
+          //                   return "Username cannot be empty";
+          //                 } else if (value != null && value.length < 6) {
+          //                   return "Password length should be atleast 6";
+          //                 }
+          //                 return null;
+          //               },
+          //             ),
+          //             const SizedBox(
+          //               height: 40.0,
+          //             ),
 
-        //             Material(
-        //               color: Colors.yellow.shade700,
-        //               borderRadius: ChangedButton
-        //                   ? BorderRadius.circular(50)
-        //                   : BorderRadius.circular(10),
-        //               child: InkWell(
-        //                 //splashColor: Colors.black,
-        //                 onTap: () => moveToHome(context),
-        //                 child: AnimatedContainer(
-        //                   duration: const Duration(seconds: 1),
-        //                   height: 50.0,
-        //                   width: ChangedButton ? 50.0 : 100.0,
-        //                   alignment: Alignment.center,
+          //             Material(
+          //               color: Colors.yellow.shade700,
+          //               borderRadius: ChangedButton
+          //                   ? BorderRadius.circular(50)
+          //                   : BorderRadius.circular(10),
+          //               child: InkWell(
+          //                 //splashColor: Colors.black,
+          //                 onTap: () => moveToHome(context),
+          //                 child: AnimatedContainer(
+          //                   duration: const Duration(seconds: 1),
+          //                   height: 50.0,
+          //                   width: ChangedButton ? 50.0 : 100.0,
+          //                   alignment: Alignment.center,
 
-        //                   // shape: ChangedButton?BoxShape.circle:BoxShape.rectangle),
-        //                   child: ChangedButton
-        //                       ? (icon
-        //                           ? Icon(
-        //                               Icons.done,
-        //                               color: Colors.white,
-        //                               size: 34,
-        //                             )
-        //                           : CircularProgressIndicator(
-        //                               color: Colors.white))
-        //                       : const Text(
-        //                           "Login",
-        //                           style: TextStyle(
-        //                               color: Colors.white,
-        //                               fontWeight: FontWeight.bold,
-        //                               fontSize: 18),
-        //                         ),
-        //                 ),
-        //               ),
-        //             ),
-        //             // Padding(
-        //             //   padding: const EdgeInsets.symmetric(
-        //             //       vertical: 32.0, horizontal: 32.0),
-        //             //   child: ElevatedButton(
-        //             //     onPressed: () {
-        //             //       Navigator.pushNamed(context, MyRoutes.home);
-        //             //     },
-        //             //     child: Padding(
-        //             //       padding: const EdgeInsets.symmetric(
-        //             //           vertical: 12.0, horizontal: 16.0),
-        //             //       child: Text("Login",
-        //             //           style: TextStyle(
-        //             //               fontWeight: FontWeight.bold, fontSize: 16.0)),
-        //             //     ),
-        //             //     style: ButtonStyle(
-        //             //       backgroundColor:
-        //             //           MaterialStateProperty.all(Colors.yellow.shade700),
-        //             //       foregroundColor:
-        //             //           MaterialStateProperty.all(Colors.black87),
-        //             //     ),
-        //             //   ),
-        //             // )
-        //           ],
-        //         ),
-        //       )
-        //     ],
-        //   ),
-        // ),
+          //                   // shape: ChangedButton?BoxShape.circle:BoxShape.rectangle),
+          //                   child: ChangedButton
+          //                       ? (icon
+          //                           ? Icon(
+          //                               Icons.done,
+          //                               color: Colors.white,
+          //                               size: 34,
+          //                             )
+          //                           : CircularProgressIndicator(
+          //                               color: Colors.white))
+          //                       : const Text(
+          //                           "Login",
+          //                           style: TextStyle(
+          //                               color: Colors.white,
+          //                               fontWeight: FontWeight.bold,
+          //                               fontSize: 18),
+          //                         ),
+          //                 ),
+          //               ),
+          //             ),
+          //             // Padding(
+          //             //   padding: const EdgeInsets.symmetric(
+          //             //       vertical: 32.0, horizontal: 32.0),
+          //             //   child: ElevatedButton(
+          //             //     onPressed: () {
+          //             //       Navigator.pushNamed(context, MyRoutes.home);
+          //             //     },
+          //             //     child: Padding(
+          //             //       padding: const EdgeInsets.symmetric(
+          //             //           vertical: 12.0, horizontal: 16.0),
+          //             //       child: Text("Login",
+          //             //           style: TextStyle(
+          //             //               fontWeight: FontWeight.bold, fontSize: 16.0)),
+          //             //     ),
+          //             //     style: ButtonStyle(
+          //             //       backgroundColor:
+          //             //           MaterialStateProperty.all(Colors.yellow.shade700),
+          //             //       foregroundColor:
+          //             //           MaterialStateProperty.all(Colors.black87),
+          //             //     ),
+          //             //   ),
+          //             // )
+          //           ],
+          //         ),
+          //       )
+          //     ],
+          //   ),
+          // ),
+        ),
       ),
     );
   }
